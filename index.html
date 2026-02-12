@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secret Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #message {
+      display: none;
+      font-size: 20px;
+      margin-top: 30px;
+    }
+  </style>
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("password").value;
+
+      var messages = {
+        "pass1": "Hi Alex 👋 This is your personal message!",
+        "pass2": "Hey Jamie 😎 You unlocked something special.",
+        "pass3": "Hello Chris 🔥 This message is just for you.",
+        "pass4": "Hi Taylor 🎉 You found your secret.",
+        "pass5": "Hey Morgan 💫 This one’s yours!"
+      };
+
+      if (messages[password]) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("message").innerHTML = messages[password];
+        document.getElementById("message").style.display = "block";
+      } else {
+        alert("Wrong password!");
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <div id="login">
+    <h2>Enter Your Password</h2>
+    <input type="password" id="password">
+    <br><br>
+    <button onclick="checkPassword()">Submit</button>
+  </div>
+
+  <div id="message"></div>
+
+</body>
+</html>
